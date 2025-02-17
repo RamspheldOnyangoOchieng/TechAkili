@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Offer - TechAkili Technologies</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/what_we_offer.css' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+</head>
+<body>
+
+<!-- Header and Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="TechAkili Logo" class="logo">
+                <span class="ms-3" style="font-size: 1.8rem; font-weight: bold; color: var(--primary-color);">TechAkili</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'services' %}">What We Offer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'courses' %}">Academy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'partners' %}">Partner With Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- What We Offer Section -->
+<section class="offer-section py-5">
+    <div class="container text-center">
+        <h1>Transforming Digital Education & Innovation</h1>
+        <p class="lead">Empowering learners and organizations to harness the power of technology for growth and success.</p>
+    </div>
+</section>
+
+<!-- Educational Solutions -->
+<section class="educational-solutions py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Educational Solutions</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h4>🎓 Interactive Courses</h4>
+                <p>Covering Cloud Computing, Cybersecurity, AI, Networking, and Software Engineering.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4>🧪 Hands-On Labs</h4>
+                <p>Real-world simulations to enhance job readiness and practical experience.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4>🤖 AI-Powered Learning Tools</h4>
+                <p>Personalized dashboards & automated assessments to track and optimize learning progress.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4>👨‍🏫 Expert-Led Mentorship</h4>
+                <p>Live sessions, Q&A forums, and coaching from industry professionals to guide your journey.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Software Development -->
+<section class="custom-software py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Custom Software Development</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h4>💻 End-to-End Development</h4>
+                <p>From ideation to deployment, we create software solutions that drive your business forward.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4>🔍 Business Solutions</h4>
+                <p>Scalable software designed to facilitate your digital transformation and optimize business processes.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4>⚙ Agile Collaboration</h4>
+                <p>Tailored solutions and iterative development to meet the specific needs of your enterprise.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white text-center">
+    <div class="container">
+        <h2>Empower Your Future with TechAkili Solutions</h2>
+        <p>Take the first step towards achieving your goals with our digital education and custom software solutions.</p>
+        <a href="{% url 'courses' %}" class="btn btn-light btn-lg mx-3">Enroll Now</a>
+        <a href="{% url 'contact' %}" class="btn btn-light btn-lg mx-3">Contact Us</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer py-4 bg-dark text-white">
+    <div class="container text-center">
+        <p>&copy; 2025 TechAkili Technologies. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
