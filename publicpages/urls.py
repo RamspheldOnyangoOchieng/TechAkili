@@ -10,5 +10,6 @@ urlpatterns = [
     path('careers/', views.careers, name='careers'),          # Careers Page
     path('contact/', views.contact, name='contact'),          # Contact Us Page
     path('login/', views.login, name='login'),                # Login Page
-    path('register/', views.register, name='register')        # Register Page
+    path('register/', views.register, name='register'),        # Register Page
+    path('submit_partnership/', views.submit_partnership, name ='submit_partnership')
 ]

@@ -25,3 +25,6 @@ def login(request):
 
 def register(request):
     return render(request, 'register.html')
+
+def submit_partnership(request):
+    return render(request, 'submit_partnership.html')
