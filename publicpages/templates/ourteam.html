@@ -1,0 +1,68 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+<!-- Team Section -->
+<section class="team-section py-5">
+    <div class="container">
+        <h2 class="text-center section-title">Meet Our Team</h2>
+        <p class="text-center section-subtitle">The experts driving TechAkili forward</p>
+        <div class="row">
+            <!-- Team Member 1 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="team-card">
+                    <img src="{% static 'images/team/member1.jpg' %}" alt="Team Member" class="team-img">
+                    <h4 class="team-name">John Doe</h4>
+                    <p class="team-role">CEO &amp Founder</p>
+                    <p class="team-bio">An industry leader in AI and technology innovation.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="team-card">
+                    <img src="{% static 'images/team/member2.jpg' %}" alt="Team Member" class="team-img">
+                    <h4 class="team-name">Jane Smith</h4>
+                    <p class="team-role">Chief Technology Officer</p>
+                    <p class="team-bio">Driving cutting-edge software development at TechAkili.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="team-card">
+                    <img src="{% static 'images/team/member3.jpg' %}" alt="Team Member" class="team-img">
+                    <h4 class="team-name">Michael Johnson</h4>
+                    <p class="team-role">Head of AI Research</p>
+                    <p class="team-bio">Expert in AI-driven solutions and data science.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="team-card">
+                    <img src="{% static 'images/team/member4.jpg' %}" alt="Team Member" class="team-img">
+                    <h4 class="team-name">Emily Davis</h4>
+                    <p class="team-role">Marketing Director</p>
+                    <p class="team-bio">Crafting innovative strategies for brand growth.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

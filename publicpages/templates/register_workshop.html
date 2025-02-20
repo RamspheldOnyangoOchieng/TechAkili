@@ -1,0 +1,31 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+{% block content %}
+    <h2 class="text-center my-4">Register for Workshop</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="workshop">Select Workshop</label>
+            <select class="form-control" id="workshop" name="workshop" required>
+                <option value="ai_ml_beginners">AI and Machine Learning for Beginners</option>
+                <option value="data_science_advanced">Advanced Data Science Techniques</option>
+                <option value="tech_entrepreneurship">Tech Entrepreneurship Bootcamp</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
+    </form>
+{% endblock %}
+
+<!-- Link to Bootstrap CSS and Custom Page CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/register_workshop.css' %}">

@@ -14,70 +14,62 @@
 </head>
 <body>
 <!-- Header and Navigation -->
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{% static 'images/logo.png' %}" alt="TechAkili Logo" class="logo">
-                <span class="ms-3" style="font-size: 1.8rem; font-weight: bold; color: var(--primary-color);">TechAkili</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'courses' %}">Academy</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'partners' %}">Partner With Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
+{% include 'header.html' %}
     <!-- Partnership Section -->
     <section class="container mt-5 text-center">
         <h1>Partner with TechAkili</h1>
         <p class="lead">We collaborate with TVET institutions, schools, and businesses to provide access to resources, internships, and software development. Let's build the future together!</p>
     </section>
 
-    <!-- Partner Showcase -->
+<!-- Partner Showcase - Bootstrap Carousel -->
 <section class="partner-showcase">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                
+    <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <img src="{% static 'images/download.png' %}" class="d-block partner-img" alt="Partner 1">
+                    <img src="{% static 'images/logo.png' %}" class="d-block partner-img" alt="Partner 2">
+                    <img src="{% static 'images/amon.jpg' %}" class="d-block partner-img" alt="Partner 3">
+                    <img src="{% static 'images/lucky.jpg' %}" class="d-block partner-img" alt="Partner 4">
+                </div>
             </div>
-            <div class="swiper-slide">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img src="{% static 'images/essy.jpg' %}" class="d-block partner-img" alt="Partner 5">
+                    <img src="{% static 'images/download.png' %}" class="d-block partner-img" alt="Partner 6">
+                    <img src="{% static 'images/r4.jpg' %}" class="d-block partner-img" alt="Partner 7">
+                    <img src="{% static 'images/r3.jpg' %}" class="d-block partner-img" alt="Partner 8">
+                </div>
             </div>
-            <div class="swiper-slide">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
-                <img src="{% static 'images/download.png' %}" alt="Partner 1">
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img src="{% static 'images/r2.jpg' %}" class="d-block partner-img" alt="Partner 9">
+                    <img src="{% static 'images/hazel.jpg' %}" class="d-block partner-img" alt="Partner 10">
+                    <img src="{% static 'images/amon.jpg' %}" class="d-block partner-img" alt="Partner 11">
+                    <img src="{% static 'images/download.png' %}" class="d-block partner-img" alt="Partner 12">
+                </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <!-- Navigation Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <!-- Pagination -->
-        <div class="swiper-pagination"></div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
     </div>
 </section>
+
 
     <!-- Call-to-Action -->
     <section class="text-center mt-4">
@@ -98,8 +90,8 @@
                 <input type="tel" name="phone" placeholder="Phone Number" required>
                 <select name="partnership_type" required>
                     <option value="">Select Partnership Type</option>
-                    <option value="education">Education & Training</option>
-                    <option value="internships">Internships & Mentorship</option>
+                    <option value="education">Education &amp Training</option>
+                    <option value="internships">Internships &amp Mentorship</option>
                     <option value="software_development">Software Development</option>
                     <option value="other">Other</option>
                 </select>

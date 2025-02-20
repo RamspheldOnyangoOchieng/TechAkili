@@ -19,44 +19,6 @@ body {
     padding: 0;
 }
 
-/* Header & Navigation */
-.navbar {
-    font-weight: bold;
-    background-color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    height: 70px; 
-}
-
-.navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.navbar-brand img.logo {
-    max-width: 60px;
-    height: auto;
-    border-radius: 50%;
-}
-
-/* Nav Links */
-.navbar-nav .nav-link {
-    font-weight: bold;
-    color: var(--primary-color);
-    padding: 8px 15px;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-    color: var(--highlight-color);
-}
-
 
 /* Hero Section */
 .hero-section {
@@ -139,50 +101,39 @@ body {
     font-size: 1.2rem;
     color: var(--primary-color);
 }
-
-/* Services Section */
-.services {
-    background: var(--light-blue-4);
-    padding: 80px 20px;
+/* Title Styling */
+.glowing-title {
+    font-size: 3.5rem;  
+    font-weight: 400;   
+    text-transform: uppercase; 
+    color: #08527a;   
+    text-shadow: 0 0 10px rgba(0, 255, 238, 0.8), 0 0 20px rgba(255, 159, 0, 0.6);
+    letter-spacing: 2px; /* Adds spacing for a professional look */
 }
 
-.services h2 {
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+/* Keyframes for Glowing & Expanding Effect */
+@keyframes glowExpand {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        text-shadow: 0 0 5px rgba(255, 159, 0, 0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: 0 0 15px rgba(255, 159, 0, 0.9);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 159, 0, 0.8);
+    }
 }
 
-.services .row {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+/* Applying the animation */
+.glowing-title {
+    animation: glowExpand 1.5s ease-in-out;
 }
 
-.services .col-md-4,
-.services .col-md-6 {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.services .col-md-4:hover,
-.services .col-md-6:hover {
-    transform: translateY(-10px);
-}
-
-.services h4 {
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.services p {
-    font-size: 1rem;
-    color: var(--primary-color);
-}
+   
 
 /* Testimonials Section */
 .testimonials {

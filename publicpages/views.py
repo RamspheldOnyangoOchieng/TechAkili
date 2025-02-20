@@ -27,4 +27,31 @@ def register(request):
     return render(request, 'register.html')
 
 def submit_partnership(request):
+    
     return render(request, 'submit_partnership.html')
+
+def team(request):
+    return render(request, 'ourteam.html')
+
+def mission(request):
+    return render(request, 'mission.html')
+def training(request):
+    return render(request, 'training.html')
+
+def training_and_workshops(request):
+    return render(request, 'training_and_workshops.html')
+
+def consulting(request):
+    return render(request, 'consulting.html')
+
+def attarch(request):
+    return render(request, 'attarch.html')
+
+def intern(request):
+    return render(request, 'intern.html')
+
+def register_workshop(request):
+    return render(request, 'register_workshop.html')
+
+def workshop_detail(request):
+    return render(request, 'workshop_detail.html')
