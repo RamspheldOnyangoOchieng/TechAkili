@@ -1,114 +1,131 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partner with Us - TechAkili</title>
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/partners.css' %}">
 </head>
 <body>
-<!-- Header and Navigation -->
-{% include 'header.html' %}
-    <!-- Partnership Section -->
-    <section class="container mt-5 text-center">
+    <!-- Include Header -->
+    {% include 'header.html' %}
+
+    <!-- Partnership Introduction Section -->
+    <section id="partnership-intro" class="container text-center mt-5">
         <h1>Partner with TechAkili</h1>
-        <p class="lead">We collaborate with TVET institutions, schools, and businesses to provide access to resources, internships, and software development. Let's build the future together!</p>
+        <p class="lead">
+            We collaborate with TVET institutions, schools, and businesses to provide access to resources, 
+            internships, and software development. Let's build the future together!
+        </p>
     </section>
 
-<!-- Partner Showcase - Bootstrap Carousel -->
-<section class="partner-showcase">
-    <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                    <img src="{% static 'images/download.png' %}" class="d-block partner-img" alt="Partner 1">
-                    <img src="{% static 'images/logo.png' %}" class="d-block partner-img" alt="Partner 2">
-                    <img src="{% static 'images/amon.jpg' %}" class="d-block partner-img" alt="Partner 3">
-                    <img src="{% static 'images/lucky.jpg' %}" class="d-block partner-img" alt="Partner 4">
+    <!-- Partner Showcase Carousel -->
+    <section id="partner-showcase" class="container mt-4">
+        <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Inner Content -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img src="{% static 'images/download.png' %}" class="partner-img" alt="Partner 1">
+                        <img src="{% static 'images/logo.png' %}" class="partner-img" alt="Partner 2">
+                        <img src="{% static 'images/amon.jpg' %}" class="partner-img" alt="Partner 3">
+                        <img src="{% static 'images/lucky.jpg' %}" class="partner-img" alt="Partner 4">
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img src="{% static 'images/essy.jpg' %}" class="partner-img" alt="Partner 5">
+                        <img src="{% static 'images/download.png' %}" class="partner-img" alt="Partner 6">
+                        <img src="{% static 'images/r4.jpg' %}" class="partner-img" alt="Partner 7">
+                        <img src="{% static 'images/r3.jpg' %}" class="partner-img" alt="Partner 8">
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img src="{% static 'images/r2.jpg' %}" class="partner-img" alt="Partner 9">
+                        <img src="{% static 'images/hazel.jpg' %}" class="partner-img" alt="Partner 10">
+                        <img src="{% static 'images/amon.jpg' %}" class="partner-img" alt="Partner 11">
+                        <img src="{% static 'images/download.png' %}" class="partner-img" alt="Partner 12">
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <img src="{% static 'images/essy.jpg' %}" class="d-block partner-img" alt="Partner 5">
-                    <img src="{% static 'images/download.png' %}" class="d-block partner-img" alt="Partner 6">
-                    <img src="{% static 'images/r4.jpg' %}" class="d-block partner-img" alt="Partner 7">
-                    <img src="{% static 'images/r3.jpg' %}" class="d-block partner-img" alt="Partner 8">
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                    <img src="{% static 'images/r2.jpg' %}" class="d-block partner-img" alt="Partner 9">
-                    <img src="{% static 'images/hazel.jpg' %}" class="d-block partner-img" alt="Partner 10">
-                    <img src="{% static 'images/amon.jpg' %}" class="d-block partner-img" alt="Partner 11">
-                    <img src="{% static 'images/download.png' %}" class="d-block partner-img" alt="Partner 12">
-                </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="2"></button>
             </div>
         </div>
+    </section>
 
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#partnerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
+    <!-- Call-to-Action Section -->
+<section id="partnership-cta">
+    <div class="cta-content">
+        <h2 class="cta-heading">Partner with Us!</h2>
+        <p class="cta-text">Join our mission to innovate, empower, and transform lives.</p>
+        <button class="btn-primary-glow" onclick="openForm()">Become a Partner Now</button>
     </div>
 </section>
 
 
-    <!-- Call-to-Action -->
-    <section class="text-center mt-4">
-        <p class="cta-text">Ready to Join? </p>
-        <button class="btn btn-primary" onclick="openForm()">Become a Partner Now</button>
-    </section>
-
-    <!-- Popup Form -->
+    <!-- Popup Form for Partnership Application -->
+    <div id="popup-overlay"></div>
     <div id="popup-form" class="popup-form-container">
         <div class="popup-form-content">
+            <!-- Close Button -->
             <span class="close-btn" onclick="closeForm()">&times;</span>
+            <!-- Form Heading -->
             <h2 class="text-center">Partnership Application</h2>
+            <!-- Partnership Form -->
             <form action="{% url 'submit_partnership' %}" method="POST">
                 {% csrf_token %}
+                <!-- Form Fields -->
                 <input type="text" name="organization_name" placeholder="Organization Name" required>
                 <input type="text" name="contact_person" placeholder="Contact Person" required>
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input type="tel" name="phone" placeholder="Phone Number" required>
                 <select name="partnership_type" required>
                     <option value="">Select Partnership Type</option>
-                    <option value="education">Education &amp Training</option>
-                    <option value="internships">Internships &amp Mentorship</option>
+                    <option value="education">Education & Training</option>
+                    <option value="internships">Internships & Mentorship</option>
                     <option value="software_development">Software Development</option>
                     <option value="other">Other</option>
                 </select>
                 <textarea name="message" placeholder="Additional Details"></textarea>
+                <!-- Submit Button -->
                 <button type="submit" class="btn btn-success w-100">Submit</button>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="footer text-center mt-5">
+    <footer class="footer text-center">
         <p>&copy; 2025 TechAkili Technologies. All Rights Reserved.</p>
     </footer>
 
-    <!-- Bootstrap & Custom JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
     <script src="{% static 'js/partners.js' %}"></script>
 </body>
 </html>

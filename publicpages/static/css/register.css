@@ -1,0 +1,112 @@
+/* Register Container */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto 10px auto;
+    padding: 1.2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 80vh; /* Fixed height */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scrollable Inner Content */
+.register-content {
+    flex-grow: 1;
+    max-height: 70vh; /* Enables scrolling inside */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.register-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.register-content::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 3px;
+}
+
+.register-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Adjust form elements */
+.register-form .form-control {
+    padding: 8px;
+    font-size: 0.9rem;
+    height: 35px;
+}
+
+/* Main Sign-Up Button */
+.register-form .btn-primary {
+    background-color: #32758c;
+    border: none;
+    font-weight: bold;
+    padding: 8px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.register-form .btn-primary:hover {
+    background-color: #285d70;
+}
+
+/* Social Login Buttons */
+.social-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.social-login .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: auto;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .register-container {
+        height: 85vh;
+    }
+
+    .register-content {
+        max-height: 75vh;
+    }
+
+    .social-login .btn {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        height: 90vh;
+    }
+
+    .register-content {
+        max-height: 85vh;
+    }
+
+    .social-login {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .social-login .btn {
+        font-size: 0.7rem;
+        padding: 4px 6px;
+    }
+}

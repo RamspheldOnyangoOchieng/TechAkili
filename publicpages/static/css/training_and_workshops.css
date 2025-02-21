@@ -1,29 +1,100 @@
-/* Custom Styles for the Training and Workshops Page */
-.card {
-    border: 2px solid #32758c; /* Using TechAkili's main color */
-    border-radius: 10px;
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
+/* Container */
+.container {
+    padding: 40px 20px;
+}
+
+/* Section Title */
+h2 {
+    color: #32758c;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Paragraph Text */
+p {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Workshop Cards */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Images */
 .card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     height: 200px;
     object-fit: cover;
 }
 
-.card-title {
-    color: #32758c;
-    font-size: 1.25rem;
-}
-
+/* Card Body */
 .card-body {
-    background-color: #f4f8fb; /* Light background color */
+    text-align: center;
 }
 
+/* Card Titles */
+.card-title {
+    font-size: 1.25rem;
+    color: #32758c;
+    font-weight: bold;
+}
+
+/* Card Text */
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Buttons */
 .btn-primary {
-    background-color: #32758c;
-    border-color: #32758c;
+    background-color: #ff9f00;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #ff9f00;
-    border-color: #ff9f00;
+    background-color: #e08900;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
 }

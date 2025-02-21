@@ -20,7 +20,8 @@ urlpatterns = [
     path('intern/',views.intern, name='intern'),
     path('training-and-workshops/', views.training_and_workshops, name='training_and_workshops'),
     path('register-workshop/', views.register_workshop, name='register_workshop'),
-    path('workshop/<int:workshop_id>/', views.workshop_detail, name='workshop_detail')
+    path('workshop/<int:workshop_id>/', views.workshop_detail, name='workshop_detail'),
+    path('forgot-password/', views.forgot_password_view, name='forgot_password')
 
 
 ]
