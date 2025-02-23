@@ -18,21 +18,15 @@
   <!-- Login Section -->
   <section id="login-section" class="login-section">
     <div id="login-container">
-      <!-- Left Side: Image -->
-      <div id="login-image">
-        <img src="{% static 'images/login.jpg' %}" alt="TechAkili Logo">
-      </div>
+      
+    </div></div>
 
       <!-- Right Side: Login Form -->
       <div id="login-form-container">
         <h2>Log in</h2>
         <form id="login-form" action="{% url 'login' %}" method="POST">
           {% csrf_token %}
-          <label for="email">Email <span class="required">*</span></label>
-          <input type="email" name="email" id="email" placeholder="name@example.com" required>
-
-          <label for="password">Password <span class="required">*</span></label>
-          <input type="password" name="password" id="password" required>
+          {{ form.as_p }}
 
           <div id="remember-me-container">
             <input type="checkbox" name="remember_me" id="remember_me">
@@ -42,6 +36,7 @@
           <button id="login-btn" type="submit">Log in now</button>
         </form>
 
+        <p>I have never Created an Account</p>
         <!-- Buttons for Register & Forgot Password -->
         <div id="action-buttons">
           <a href="{% url 'register' %}">
@@ -51,25 +46,23 @@
             <button id="forgot-password-btn" type="button">Forgot password?</button>
           </a>
         </div>
-
+        {% if messages %}
+        <div class="container">
+          {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
         <!-- Social Login -->
         <div id="social-login">
           <p>Or sign in with</p>
           <div id="social-buttons">
             <a href="{% url 'social:begin' 'google-oauth2' %}" class="social-btn google-btn">
               <i class="fab fa-google"></i> Google
-            </a>
-            <a href="{% url 'social:begin' 'facebook' %}" class="social-btn facebook-btn">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="{% url 'social:begin' 'twitter' %}" class="social-btn twitter-btn">
-              <i class="fab fa-twitter"></i> Twitter/X
-            </a>
-            <a href="{% url 'social:begin' 'linkedin-oauth2' %}" class="social-btn linkedin-btn">
-              <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="{% url 'social:begin' 'github' %}" class="social-btn github-btn">
-              <i class="fab fa-github"></i> GitHub
             </a>
           </div>
         </div>

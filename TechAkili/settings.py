@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0*#kn*fo*o49_&$bo_e+_83(kkg&#*z2*y%tf&$+8j%+gz(_+@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['techakili.africa','www.techakili.africa.com']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,12 +53,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'TechAkili.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],  # Ensure it points to your templates folder
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,8 +80,12 @@ WSGI_APPLICATION = 'TechAkili.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'techakili_db',  # Ensure this is your correct database name
+        'USER': 'rams',  # Remove '@localhost'
+        'PASSWORD': 'Ramspheld1070!@#$A',  # Ensure password is correct
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -119,10 +125,42 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # Make sure BASE_DIR is defined
+] if os.path.exists(os.path.join(BASE_DIR, "static")) else []
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'publicpages.CustomUser'
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'publicpages.authentication.EmailBackend',  # Custom email authentication
+    'django.contrib.auth.backends.ModelBackend',  # Default Django authentication
+]
+
+SESSION_ENGINE = "django.contrib.sessions.backends.db"  # Uses the database
+SESSION_COOKIE_AGE = 1209600  # 2 weeks (matches your logic)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Keep session alive even after closing the browser
+
+# Redirect users to the homepage or dashboard after login
+LOGIN_URL = '/login/' 
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/home/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/home/'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "ramspheldonyango@gmail.com"
+EMAIL_HOST_PASSWORD = "qakp qgtr inpn sapv"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
