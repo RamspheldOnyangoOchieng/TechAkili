@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0*#kn*fo*o49_&$bo_e+_83(kkg&#*z2*y%tf&$+8j%+gz(_+@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['techakili.africa','www.techakili.africa.com']
+ALLOWED_HOSTS = ['.techakili.africa']
 
 
 # Application definition
