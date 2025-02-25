@@ -72,7 +72,7 @@ nbformat==5.10.4
 nest-asyncio==1.6.0
 notebook==7.3.1
 notebook_shim==0.2.4
-numpy==1.26.4
+numpy==1.26.6
 oauthlib==3.2.2
 overrides==7.7.0
 packaging==24.0
@@ -94,7 +94,7 @@ python-dateutil==2.9.0.post0
 python-json-logger==3.2.1
 python3-openid==3.2.0
 pytz==2024.1
-pywin32==308
+#pywin32==308
 pywinpty==2.0.14
 PyYAML==6.0.2
 pyzmq==26.2.0
