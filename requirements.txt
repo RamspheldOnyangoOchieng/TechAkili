@@ -95,7 +95,8 @@ python-json-logger==3.2.1
 python3-openid==3.2.0
 pytz==2024.1
 #pywin32==308
-pywinpty==2.0.14
+#pywinpty==2.0.14
+ptyprocess
 PyYAML==6.0.2
 pyzmq==26.2.0
 referencing==0.35.1
